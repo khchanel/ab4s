@@ -12,10 +12,8 @@
 		@import url(//fonts.googleapis.com/css?family=Lato:700);
 
 		body {
-			margin:0;
 			font-family:'Lato', sans-serif;
 			text-align:center;
-			color: #999;
 		}
 
 		a, a:visited {
@@ -24,6 +22,15 @@
 	</style>
 </head>
 <body>
+	<header class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1>The Official Consumer Guide To<br>
+				<small>Buying a Business in Australia</small>
+				</h1>
+			</div>
+		</div>
+	</header>
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
