@@ -24,10 +24,55 @@
 	</style>
 </head>
 <body>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+					<span class="sr-only">Toggle navigation</span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="main-navbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Sell Your Business</a></li>
+					<li><a href="#">Client Reviews</a></li>
+					<li><a href="#">Agent & Brokers</a></li>
+					<li><a href="#">Franchise</a></li>
+					<li><a href="#">FAQ</a></li>
+					<li><a href="#">Contact us</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<div class="container">
 		@yield('content')
 	</div>
 </body>
 <!-- Latest compiled and minified JavaScript -->
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+/*the function to make navbar stay fixed at the top once the header has scrolled away*/
+$(function(){
+  var
+    $win = $(window),
+    $filter = $('.navbar'),
+    $filterSpacer = $('<div />', {
+      "class": "filter-drop-spacer",
+      "height": $filter.outerHeight()
+    });
+  $win.scroll(function() {
+    if(!$filter.hasClass('navbar-fixed-top') && $win.scrollTop() > $filter.offset().top){
+      $filter.before($filterSpacer);
+      $filter.addClass("navbar-fixed-top");
+    } else if ($filter.hasClass('navbar-fixed-top')  && $win.scrollTop() < $filterSpacer.offset().top){
+      $filter.removeClass("navbar-fixed-top");
+      $filterSpacer.remove();
+    }
+  });
+});
+</script>
 </html>
