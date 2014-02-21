@@ -11,6 +11,7 @@ composer.lock
 # Local config
 .env.local.php
 .env.php
+/app/config/local/*
 
 # OS Misc
 .DS_Store
