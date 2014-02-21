@@ -9,11 +9,11 @@
 	<div class="row">
 		<div class="col-xs-12 flexslider">
 			<ul class="slides">
-				<li><img src="{{ asset('data/SBX10241/booking-storage/XB9274023-a.JPG') }}" /></li>
-				<li><img src="{{ asset('data/SBX10241/booking-storage/XB9274023-b.JPG') }}" /></li>
-				<li><img src="{{ asset('data/SBX10241/booking-storage/XB9274023-c.JPG') }}" /></li>
-				<li><img src="{{ asset('data/SBX10241/booking-storage/XB9274023-d.JPG') }}" /></li>
-				<li><img src="{{ asset('data/SBX10241/booking-storage/XB9274023-m.JPG') }}" /></li>
+				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-a.JPG') }}" /></li>
+				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-b.JPG') }}" /></li>
+				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-c.JPG') }}" /></li>
+				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-d.JPG') }}" /></li>
+				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-m.JPG') }}" /></li>
 			</ul>
 		</div>
 		<div class="col-xs-12">Location: {{{ $booking->suburb_business }}} </div>
