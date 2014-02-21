@@ -1,8 +1,17 @@
+# Framework
 /bootstrap/compiled.php
 /vendor
 composer.phar
 composer.lock
+
+# App data
+
+# Cache
+
+# Local config
 .env.local.php
 .env.php
+
+# OS Misc
 .DS_Store
 Thumbs.db
