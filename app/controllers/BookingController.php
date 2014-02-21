@@ -17,12 +17,9 @@ class BookingController extends BaseController {
 
 	public function showBooking($id)
 	{
-		//return View::make('hello');
-		//$booking = Booking::find($id);
 		//$booking = DB::table('ab4s_booking')->where('uuid', $id)->first();
 		$booking = Booking::where('uuid', '=', $id)->first();
-		//return $booking;
-		//var_dump($booking);exit;
+
 		return View::make('booking',array('booking' => $booking));
 	}
 
