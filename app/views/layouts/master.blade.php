@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+	@yield('meta')
 	<title>Laravel PHP Framework</title>
 	<style>
 		@import url(//fonts.googleapis.com/css?family=Lato:700);
@@ -61,25 +63,29 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 /*the function to make navbar stay fixed at the top once the header has scrolled away*/
 $(function(){
-  var
-    $win = $(window),
-    $filter = $('.navbar'),
-    $filterSpacer = $('<div />', {
-      "class": "filter-drop-spacer",
-      "height": $filter.outerHeight()
-    });
-  $win.scroll(function() {
-    if(!$filter.hasClass('navbar-fixed-top') && $win.scrollTop() > $filter.offset().top){
-      $filter.before($filterSpacer);
-      $filter.addClass("navbar-fixed-top");
-    } else if ($filter.hasClass('navbar-fixed-top')  && $win.scrollTop() < $filterSpacer.offset().top){
-      $filter.removeClass("navbar-fixed-top");
-      $filterSpacer.remove();
-    }
-  });
+	var $win = $(window),
+		$filter = $('.navbar'),
+		$filterSpacer = $('<div />', {
+			"class": "filter-drop-spacer",
+			"height": $filter.outerHeight()
+		});
+
+	$win.scroll(function() {
+		if(!$filter.hasClass('navbar-fixed-top') && $win.scrollTop() > $filter.offset().top){
+			$filter.before($filterSpacer);
+			$filter.addClass("navbar-fixed-top");
+		} else if ($filter.hasClass('navbar-fixed-top')  && $win.scrollTop() < $filterSpacer.offset().top){
+			$filter.removeClass("navbar-fixed-top");
+			$filterSpacer.remove();
+		}
+	});
 });
 </script>
+
+@yield('script')
+
 </html>
