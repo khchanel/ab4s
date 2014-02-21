@@ -7,6 +7,10 @@
 @section('content')
 
 	<div class="row">
+		<div id="listing-id">
+			<h1> {{ $booking->description_title }} </h1>
+			<h2> {{ $booking->uuid }} </h2>
+		</div>
 		<div class="col-xs-12 flexslider">
 			<ul class="slides">
 				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-a.JPG') }}" /></li>
