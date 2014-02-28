@@ -31,11 +31,15 @@ class BookingTest extends TestCase {
     public function testBookingGetImages() {
         $id = 'SBX10241';
         $booking = Booking::where('uuid', '=', $id)->first();
-
         $this->assertNotEmpty($booking, "Booking $id cant be found");
-
         $imgs = $booking->getImages();
-
         $this->assertCount(5, $imgs, "Booking $id img count is wrong");
+
+
+        $id = 'ZTEST01';
+        $booking = Booking::where('uuid', '=', $id)->first();
+        $this->assertNotEmpty($booking, "Booking $id cant be found");
+        $imgs = $booking->getImages();
+        $this->assertCount(1, $imgs, "Booking $id img count is wrong");
     }
 }
