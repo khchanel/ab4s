@@ -23,8 +23,9 @@ class BookingTest extends TestCase {
         $this->assertTrue($this->client->getResponse()->isOk());
 
         $this->assertCount(1, $crawler->filter("#listing-id:contains('$uuid')"));
-        $this->assertCount(0, $crawler->filter('.slides > li'));
-        $this->assertCount(0, $crawler->filter('#img-slider'));
+        $this->assertCount(1, $crawler->filter('.slides > li'));
+        $imgsrc = $crawler->filter('#img-slider > li > img')->attr('src');
+        $this->assertContains('no-booking-img.jpg', $imgsrc, 'Fail to show no-booking-img.jpg');
     }
 
     public function testBookingGetImages() {

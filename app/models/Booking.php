@@ -33,13 +33,14 @@ class Booking extends Eloquent {
             $paths = File::allFiles($img_dir);
 
             /* @TODO: detect & filter only image files */
-        } else {
-            return $img_paths;
-        }
 
-        // strip public folder path
-        foreach ($paths as $p) {
-            $img_paths[] = str_replace(public_path(), '', $p);
+            // strip public folder path
+            foreach ($paths as $p) {
+                $img_paths[] = str_replace(public_path(), '', $p);
+            }
+
+        } else {
+            $img_paths[] = URL::asset('static/img/no-booking-img.jpg');
         }
 
         return $img_paths;
