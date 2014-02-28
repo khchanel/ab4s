@@ -11,15 +11,18 @@
 			<h1> {{ $booking->description_title }} </h1>
 			<h2> {{ $booking->uuid }} </h2>
 		</div>
-		<div class="col-xs-12 flexslider col-md-8">
-			<ul class="slides">
-				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-a.JPG') }}" /></li>
-				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-b.JPG') }}" /></li>
-				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-c.JPG') }}" /></li>
-				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-d.JPG') }}" /></li>
-				<li><img src="{{ asset('data/users/' . $booking->id_user . '/' . 'booking-storage/' . $booking->uuid . '/XB9274023-m.JPG') }}" /></li>
-			</ul>
-		</div>
+
+		{{-- Show slider if there is image --}}
+		@if ($booking->getImages())
+			<div id="img-slider-container" class="col-xs-12 flexslider col-md-8">
+				<ul id="img-slider" class="slides">
+					@foreach ($booking->getImages() as $image)
+						<li><img src="{{ $image }}" /></li>
+					@endforeach
+				</ul>
+			</div>
+		@endif
+
 		<div style="text-align: left">
 		<div class="col-xs-12 col-md-4"><h4>Location: {{{ $booking->suburb_business }}}</h4></div>
 		<div class="col-xs-12 col-md-4"><h4>Price: {{{ $booking->price }}} </h4></div>
