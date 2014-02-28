@@ -7,6 +7,9 @@ composer.lock
 # App data
 /public/data/*
 
+# Log
+/logs
+
 # Cache
 
 # Local config
