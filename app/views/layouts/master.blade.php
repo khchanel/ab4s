@@ -48,7 +48,7 @@
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Sell Your Business</a></li>
 					<li><a href="#">Client Reviews</a></li>
-					<li><a href="#">Agent & Brokers</a></li>
+					<li><a href="#">Agent &amp; Brokers</a></li>
 					<li><a href="#">Franchise</a></li>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">Contact us</a></li>
@@ -86,6 +86,6 @@ $(function(){
 });
 </script>
 
-@yield('script')
+@yield('footer-script')
 
 </html>
