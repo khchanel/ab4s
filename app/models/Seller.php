@@ -10,7 +10,7 @@ class Seller extends Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var string
 	 */
-	protected $table = 'ab4s_users';
+	protected $table = 'ab4s_user';
 
 	/**
 	 * The attributes excluded from the model's JSON form.

@@ -17,4 +17,6 @@ Route::get('/', function()
 });
 
 Route::get('booking/{id}','BookingController@showBooking');
-Route::get('login','SellerController@sellerLogin');
+Route::get('login',array('as' => 'login', 'uses' => 'SellerController@sellerLogin'));
+Route::post('loginCheck','SellerController@sellerLoginCheck');
+Route::get('member',array('as' => 'sellerHome', 'uses' => 'SellerController@sellerHome'));
