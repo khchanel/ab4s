@@ -17,3 +17,4 @@ Route::get('/', function()
 });
 
 Route::get('booking/{id}','BookingController@showBooking');
+Route::get('login','SellerController@sellerLogin');
