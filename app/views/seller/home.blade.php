@@ -17,7 +17,7 @@
 					<li><a href="#">Account Detail</a></li>
 					<li><a href="#">New Listing</a></li>
 					<li><a href="#">Listing Enquiry</a></li>
-					<li><a href="#">Logout</a></li>
+					<li><a href="{{route('logout')}}">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -25,5 +25,14 @@
 @stop
 
 @section('content')
-
+	<div class="row">
+		<div class="col-xs-12 col-md-10 col-md-offset-1">
+	    @if (Session::has('flash_error'))
+	        <div class="alert alert-danger">{{ Session::get('flash_error') }}</div>
+	    @endif
+	    @if (Session::has('flash_notice'))
+	        <div class="alert alert-info">{{ Session::get('flash_notice') }}</div>
+	    @endif
+	    </div>
+    </div>
 @stop

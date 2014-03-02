@@ -48,4 +48,10 @@ class SellerController extends BaseController {
     {
         return View::make('seller.home');
     }
+
+     public function sellerLogout()
+    {
+        Auth::logout();
+        return View::make('seller.sellerLogin');
+    }
 }
