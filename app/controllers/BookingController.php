@@ -20,6 +20,12 @@ class BookingController extends BaseController {
         //$booking = DB::table('ab4s_booking')->where('uuid', $id)->first();
         $booking = Booking::where('uuid', '=', $id)->first();
 
-        return View::make('booking', array('booking' => $booking));
+
+        switch (Request::format()) {
+            case 'html':
+                return View::make('booking', array('booking' => $booking));
+            case 'json':
+                return $booking;
+        }
     }
 }
