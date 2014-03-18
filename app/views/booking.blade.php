@@ -13,10 +13,10 @@
         </div>
 
         {{-- Show slider if there is image --}}
-        @if ($booking->getImages())
+        @if ($booking->images())
             <div id="img-slider-container" class="col-xs-12 flexslider col-md-8">
                 <ul id="img-slider" class="slides">
-                    @foreach ($booking->getImages() as $image)
+                    @foreach ($booking->images() as $image)
                         <li><img src="{{ $image }}" /></li>
                     @endforeach
                 </ul>

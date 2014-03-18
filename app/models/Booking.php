@@ -23,7 +23,7 @@ class Booking extends Eloquent {
      * Get an array of booking images path
      * @return array
      */
-    public function getImages()
+    public function images()
     {
 
         $img_paths = array();
