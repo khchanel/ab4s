@@ -15,7 +15,7 @@ class BookingController extends BaseController {
     |
     */
 
-    public function showBooking($id)
+    public function show($id)
     {
         //$booking = DB::table('ab4s_booking')->where('uuid', $id)->first();
         $booking = Booking::where('uuid', '=', $id)->first();

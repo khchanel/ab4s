@@ -16,4 +16,4 @@ Route::get('/', function()
     return View::make('hello');
 });
 
-Route::get('booking/{id}','BookingController@showBooking');
+Route::get('booking/{id}','BookingController@show');
