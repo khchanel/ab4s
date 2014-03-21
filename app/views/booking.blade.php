@@ -27,7 +27,7 @@
         <div class="col-xs-12 col-md-4"><h4>Location: {{{ $booking->suburb_business }}}</h4></div>
         <div class="col-xs-12 col-md-4"><h4>Price: {{{ $booking->price }}} </h4></div>
         <div class="col-xs-12 col-md-4"><h4>Category: {{{ $booking->id_category_01 }}} </h4></div>
-        <div class="col-xs-12 col-md-4"><p>{{{ $booking->description_content }}} </p></div>
+        <div class="col-xs-12 col-md-4"><p> {{ $booking->description_content }} </p></div>
         </div>
     </div>
 @stop
