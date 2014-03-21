@@ -17,3 +17,4 @@ Route::get('/', function()
 });
 
 Route::get('booking/{id}','BookingController@show');
+Route::resource('api/booking','BookingApiController', array('only' => array('index', 'show')));
