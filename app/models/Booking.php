@@ -10,6 +10,16 @@ class Booking extends Eloquent {
     protected $table = 'ab4s_booking';
 
     /**
+     * Get the unique identifier for the user.
+     *
+     * @return mixed
+     */
+    public function getAuthIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    /**
      * Get an array of booking images path
      * @return array
      */
